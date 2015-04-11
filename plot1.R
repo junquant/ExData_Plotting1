@@ -8,9 +8,10 @@ data <- subset(data,data$Date=="2007-02-01"|data$Date=="2007-02-02")
 # Launch the graphics device. Plot the Graph. Close the graphics device
 png("plot1.png", width = 480, height = 480)
 
-hist(data$Global_active_power, 
+with(data,
+     hist(data$Global_active_power, 
      main = "Global Active Power", 
      col = "red", 
-     xlab = "Global Active Power (kilowatts)")
+     xlab = "Global Active Power (kilowatts)"))
 
 dev.off()
